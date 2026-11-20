@@ -1,15 +1,47 @@
-<h1>My Account</h1>
-<button type="button" id="google-sign-in">Sign in with Google</button>
-<p><a href="https://rzp.io/rzp/bqRgm9Jq">Pay with Razorpay</a></p>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Account | Kailas Digital Technology</title>
+<style>
+* {box-sizing:border-box}
+body {margin:0; background:#0b1425; color:#eff5fa; font:17px/1.6 "Segoe UI",sans-serif}
+.wrap {width:min(1060px,90%);margin:auto}
+header, footer {border-bottom:1px solid #304057}
+header .wrap, nav {display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+header .wrap {padding:22px 0;justify-content:space-between}
+a {color:#8de0ea}
+.brand {font-weight:750;text-decoration:none;color:#edf4ff}
+.brand span {color:#76dbe8}
+nav {gap:18px;font-size:.94rem}
+main {padding:clamp(38px,7vw,88px) 0}
+h1 {font-size:clamp(46px,7vw,86px);line-height:1.04;letter-spacing:-.055em;margin:0 0 40px}
+h2 {margin:0;font-size:1.55rem}
+.grid {display:grid;grid-template-columns:1fr 1fr;gap:20px}
+section {border:1px solid #33465e;border-radius:16px;background:#142137;padding:clamp(22px,4vw,40px);overflow-wrap:anywhere}
+section p {color:#c1cfde}
+.btn {display:inline-block;margin-top:8px;border:0;border-radius:8px;padding:12px 18px;background:#91e3ed;color:#0a2030;font:inherit;font-weight:650;text-decoration:none;cursor:pointer}
+.pay {background:#ffe1a4}
+button:disabled {opacity:.65}
+:focus-visible {outline:3px solid white;outline-offset:4px}
+footer {border-top:1px solid #304057;padding:18px 0;color:#b8c9d7}
+@media(max-width:700px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="./index.html"><span>✦</span> Kailas Digital Technology</a><nav aria-label="Main navigation"><a href="./index.html">Home</a><a href="./services.html">Worldwide Services</a></nav></div></header>
+<main class="wrap"><h1>My Account</h1><div class="grid">
+<section><h2>Customer sign-in</h2><p>Use your Google account to sign in to Kailas.</p>
+<button class="btn" type="button" id="google-sign-in" disabled>Sign in with Google</button>
+<noscript>Enable JavaScript to use Google sign-in.</noscript></section>
+<section><h2>Service payments</h2><p>Enter the advance or balance shown on your agreed quotation when you open Razorpay.</p>
+<a class="btn pay" href="https://rzp.io/rzp/bqRgm9Jq">Pay with Razorpay →</a></section>
+</div></main>
+<footer><div class="wrap">Kailas Digital Technology · Bicholim, Goa</div></footer>
 <script type="module">
-  // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
     apiKey: "AIzaSyDp9tNljoRd02c9Osy_7aEpHk0iqt3imbA",
     authDomain: "kailas-digital-technplogy.firebaseapp.com",
@@ -20,7 +52,6 @@
     measurementId: "G-7JJC5G17HH"
   };
 
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
  import {
   getAuth,
@@ -34,12 +65,12 @@ const auth = getAuth(app);
 const button = document.getElementById("google-sign-in");
 const status = document.createElement("p");
 status.setAttribute("role", "status");
-button.after(status);
+button.before(status);
 button.disabled = true;
 
 onAuthStateChanged(auth, (user) => {
   button.textContent = user ? "Sign out" : "Sign in with Google";
-  status.textContent = user ? `Signed in as ${user.email || user.displayName}` : "";
+  status.textContent = user ? `Signed in as ${user.email || user.displayName || "Kailas customer"}` : "";
   button.disabled = false;
 });
 
@@ -58,3 +89,5 @@ button.addEventListener("click", async () => {
   }
 });
 </script>
+</body>
+</html>
