@@ -1,48 +1,32 @@
 <!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>My Account | Kailas Digital Technology</title>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Your customer account | Kailas</title>
 <style>
-* {box-sizing:border-box}
-body {margin:0; background:#0b1425; color:#eff5fa; font:17px/1.6 "Segoe UI",sans-serif}
-.wrap {width:min(1060px,90%);margin:auto}
-header, footer {border-bottom:1px solid #304057}
-header .wrap, nav {display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-header .wrap {padding:22px 0;justify-content:space-between}
-a {color:#8de0ea}
-.brand {font-weight:750;text-decoration:none;color:#edf4ff}
-.brand span {color:#76dbe8}
-nav {gap:18px;font-size:.94rem}
-main {padding:clamp(38px,7vw,88px) 0}
-h1 {font-size:clamp(46px,7vw,86px);line-height:1.04;letter-spacing:-.055em;margin:0 0 40px}
-h2 {margin:0;font-size:1.55rem}
-.grid {display:grid;grid-template-columns:1fr 1fr;gap:20px}
-section {border:1px solid #33465e;border-radius:16px;background:#142137;padding:clamp(22px,4vw,40px);overflow-wrap:anywhere}
-section p {color:#c1cfde}
-.btn {display:inline-block;margin-top:8px;border:0;border-radius:8px;padding:12px 18px;background:#91e3ed;color:#0a2030;font:inherit;font-weight:650;text-decoration:none;cursor:pointer}
-.pay {background:#ffe1a4}
-button:disabled {opacity:.65}
-:focus-visible {outline:3px solid white;outline-offset:4px}
-footer {border-top:1px solid #304057;padding:18px 0;color:#b8c9d7}
-@media(max-width:700px){.grid{grid-template-columns:1fr}}
-</style>
-</head>
-<body>
-<header><div class="wrap"><a class="brand" href="./index.html"><span>✦</span> Kailas Digital Technology</a><nav aria-label="Main navigation"><a href="./index.html">Home</a><a href="./services.html">Worldwide Services</a></nav></div></header>
-<main class="wrap"><h1>My Account</h1><div class="grid">
-<section><h2>Customer sign-in</h2><p>Use your Google account to sign in to Kailas.</p>
-<button class="btn" type="button" id="google-sign-in" disabled>Sign in with Google</button>
-<noscript>Enable JavaScript to use Google sign-in.</noscript></section>
-<section><h2>Service payments</h2><p>Enter the advance or balance shown on your agreed quotation when you open Razorpay.</p>
-<a class="btn pay" href="https://rzp.io/rzp/bqRgm9Jq">Pay with Razorpay →</a></section>
-</div></main>
-<footer><div class="wrap">Kailas Digital Technology · Bicholim, Goa</div></footer>
+*{box-sizing:border-box}body{margin:0;color:#16372e;background:#f2f5ee;font:17px/1.55 system-ui,sans-serif}header,main,footer{width:min(900px,92%);margin:auto}header{padding:20px 0;border-bottom:1px solid #bccbbf;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}main{padding:32px 0}h1{font:600 clamp(32px,5vw,52px)/1.1 Georgia,serif;margin:10px 0}h2{font-size:22px}form{background:white;padding:clamp(16px,4vw,38px);border:1px solid #cad6ca;border-radius:15px;margin:20px 0}label{display:block;font-weight:600;margin:16px 0 5px}input,select,textarea{width:100%;padding:12px;border:1px solid #92aaa0;border-radius:7px;font:inherit;background:white;color:inherit}input[type=checkbox]{width:auto}a{color:#18523f}button,.action{display:inline-block;background:#204e3d;color:white;border:0;border-radius:7px;padding:10px 16px;font:inherit;cursor:pointer;margin:6px 4px 6px 0}.secondary{color:#204e3d;background:#e8eee7}button:disabled{opacity:.55}fieldset{border:0;padding:0;margin:0;min-width:0}[hidden]{display:none!important}footer{padding-bottom:28px}#notice{overflow-wrap:anywhere}
+</style></head><body>
+<header><strong>Kailas Digital Technology</strong><a href="./services.html">Worldwide Services</a></header>
+<main><h1>Your customer account</h1><p>Choose a service and tell Kailas what you need. Your contact details are used to respond to your request.</p>
+<button id="login" disabled>Sign in with Google</button> <a href="./index.html">Continue to Kailas</a>
+<p id="notice" role="status">Loading Google sign-in…</p>
+<form id="profile" hidden><fieldset id="fields"><h2>Contact details and interests</h2>
+<label for="name">Name</label><input id="name" required maxlength="120" autocomplete="name">
+<label for="email">Signed-in email</label><input id="email" readonly type="email">
+<label for="phone">Phone / WhatsApp (optional)</label><input id="phone" type="tel" maxlength="32" autocomplete="tel">
+<label for="service">Interested service</label><select id="service"><option>Not sure yet</option><option>AI Business Automation</option><option>Kailas Email Manager</option><option>Kailas Learning Technology</option><option>Kailas AI Assistant</option><option>Kailas AI Office</option><option>Social Media Management</option><option>Digital Advertising &amp; Marketing Automation</option><option>Software Development &amp; Solutions</option><option>WhatsApp Meta AI Business Solutions</option><option>AI Chatbot Development</option><option>AI Voiceover &amp; Audio Generation</option><option>AI Video Generation</option><option>AI Image Generation</option><option>Video Editing</option><option>Graphic Designing</option><option>AI-Based Blogs &amp; Articles</option><option>AI Content Services</option><option>Web Development</option><option>AI Tools Creation &amp; Development</option><option>Quotation and Payment Setup</option><option>Local Business Profile Setup</option></select>
+<label><input type="checkbox" id="consent" required> I agree that Kailas Digital Technology may contact me about this service.</label>
+<button type="submit" value="save">Save my registration</button>
+<button type="button" id="remove" class="secondary" hidden>Remove my registration</button>
+<hr><h2>Customer enquiry</h2><label for="message">What would you like help with?</label>
+<textarea id="message" rows="5" maxlength="3000" placeholder="Describe your project, the help you need and your preferred timeline."></textarea>
+<button type="submit" value="send">Send enquiry</button>
+</fieldset></form><p id="result" role="status"></p>
+<h2>Service payments</h2><p>Pay the advance or balance agreed in your quotation.</p><a class="action" href="https://rzp.io/rzp/bqRgm9Jq">Pay with Razorpay</a>
+</main><footer><a href="mailto:kailas.digital.technology@gmail.com">Contact Kailas</a></footer>
 <script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
-
-  const firebaseConfig = {
+const el = id => document.getElementById(id);
+try {
+const sdk = 'https://www.gstatic.com/firebasejs/13.4.0/';
+const [{initializeApp}, {getAuth,GoogleAuthProvider,onAuthStateChanged,signInWithPopup,signOut}, {getFirestore,doc,collection,getDocFromServer,setDoc,deleteDoc,writeBatch,serverTimestamp}] = await Promise.all(['firebase-app','firebase-auth','firebase-firestore'].map(name=>import(sdk+name+'.js')));
+const firebaseConfig = {
     apiKey: "AIzaSyDp9tNljoRd02c9Osy_7aEpHk0iqt3imbA",
     authDomain: "kailas-digital-technplogy.firebaseapp.com",
     projectId: "kailas-digital-technplogy",
@@ -51,43 +35,78 @@ footer {border-top:1px solid #304057;padding:18px 0;color:#b8c9d7}
     appId: "1:882338104239:web:ccb8ce8d0c1376e20fe55a",
     measurementId: "G-7JJC5G17HH"
   };
-
-  const app = initializeApp(firebaseConfig);
- import {
-  getAuth,
-  GoogleAuthProvider,
-  onAuthStateChanged,
-  signInWithPopup,
-  signOut
-} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-auth.js";
-
-const auth = getAuth(app);
-const button = document.getElementById("google-sign-in");
-const status = document.createElement("p");
-status.setAttribute("role", "status");
-button.before(status);
-button.disabled = true;
-
-onAuthStateChanged(auth, (user) => {
-  button.textContent = user ? "Sign out" : "Sign in with Google";
-  status.textContent = user ? `Signed in as ${user.email || user.displayName || "Kailas customer"}` : "";
-  button.disabled = false;
-});
-
-button.addEventListener("click", async () => {
-  button.disabled = true;
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app), db = getFirestore(app);
+let revision = 0;
+el('login').onclick = async () => {
   try {
-    if (auth.currentUser) {
-      await signOut(auth);
-    } else {
-      await signInWithPopup(auth, new GoogleAuthProvider());
-    }
-  } catch (error) {
-    status.textContent = `Please try again (${error.code}).`;
-  } finally {
-    button.disabled = false;
-  }
+    if(auth.currentUser) await signOut(auth);
+    else await signInWithPopup(auth,new GoogleAuthProvider());
+  } catch(error) { el('notice').textContent = 'Sign-in: '+error.code; }
+};
+onAuthStateChanged(auth, async user => {
+  const version = ++revision;
+  el('profile').reset();
+  el('profile').hidden = true;
+  el('remove').hidden = true;
+  el('result').textContent = '';
+  el('login').disabled = false;
+  el('login').textContent = user ? 'Sign out' : 'Sign in with Google';
+  el('notice').textContent = user ? 'Customer ID: '+user.uid : 'Sign in to register or send an enquiry.';
+  if(!user) return;
+  try {
+    const snapshot = await getDocFromServer(doc(db,'customerProfiles',user.uid));
+    if(version !== revision) return;
+    const saved = snapshot.data() || {};
+    el('name').value = saved.name || user.displayName || '';
+    el('email').value = user.email;
+    el('phone').value = saved.phone || '';
+    el('service').value = saved.service || 'Not sure yet';
+    el('consent').checked = saved.consent === true;
+    el('remove').hidden = !snapshot.exists();
+    el('fields').disabled = false;
+    el('profile').hidden = false;
+  } catch(error) { if(version === revision) el('result').textContent = 'Registration could not load. Refresh to retry or contact Kailas. '+error.code; }
 });
-</script>
-</body>
-</html>
+el('profile').onsubmit = async event => {
+  event.preventDefault();
+  const user = auth.currentUser, version = revision;
+  if(!user || el('fields').disabled) return;
+  const send = event.submitter?.value === 'send';
+  const message = el('message').value.trim();
+  const name = el('name').value.trim();
+  if(!name || (send && !message)) {
+    el('result').textContent = name ? 'Please enter your enquiry.' : 'Please enter your name.';
+    el(name ? 'message' : 'name').focus(); return;
+  }
+  const profile = {name,email:user.email,phone:el('phone').value.trim(),service:el('service').value,consent:el('consent').checked,updatedAt:serverTimestamp()};
+  const ref = doc(db,'customerProfiles',user.uid);
+  el('fields').disabled = true;
+  try {
+    if(send) {
+      const batch = writeBatch(db);
+      batch.set(ref,profile);
+      batch.set(doc(collection(db,'customerEnquiries')),{...profile,customerId:user.uid,message});
+      await batch.commit();
+    } else await setDoc(ref,profile);
+    if(version !== revision) return;
+    el('remove').hidden = false;
+    if(send) el('message').value = '';
+    el('result').textContent = send ? 'Your enquiry was sent to Kailas.' : 'Your registration was saved.';
+  } catch(error) { if(version===revision) el('result').textContent='Could not confirm your submission. '+error.code; }
+  finally { if(version===revision) el('fields').disabled=false; }
+};
+el('remove').onclick = async () => {
+  const user=auth.currentUser, version=revision;
+  if(!user || !confirm('Remove your saved registration? Previously sent enquiries will remain with Kailas.')) return;
+  el('fields').disabled=true;
+  try {
+    await deleteDoc(doc(db,'customerProfiles',user.uid));
+    if(version!==revision) return;
+    el('profile').reset(); el('email').value=user.email; el('remove').hidden=true;
+    el('result').textContent='Registration removed.';
+  } catch(error) { if(version===revision) el('result').textContent='Could not remove registration. '+error.code; }
+  finally { if(version===revision) el('fields').disabled=false; }
+};
+} catch(error) {el('notice').textContent='Account services could not load. Open the published website and refresh to try again.';}
+</script></body></html>
